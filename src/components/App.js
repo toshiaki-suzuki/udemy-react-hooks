@@ -19,7 +19,14 @@ const App = () => {
     setTitle('')
     setBody('')
   }
-  console.log(state);
+
+  const deleteAllEvents = e => {
+    e.preventDefault()
+    dispatch({type: 'DELETE_ALL_EVENTS'})
+  }
+
+  const unCreatable = title === '' || body === ''
+
   return (
     <div className="container-fluid">
       <h4>イベント作成フォーム</h4>
