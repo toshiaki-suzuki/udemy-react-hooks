@@ -10,7 +10,7 @@ const events = (state = [], action) => {
       
       return [...state, {id, ...event}]
     case 'DELETE_EVENT':
-      return state
+      return state.filter(event => action.id !== event.id)
     case 'DELETE_ALL_EVENTS':
       return []
     default:
