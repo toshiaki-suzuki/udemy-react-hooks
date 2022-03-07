@@ -9,11 +9,12 @@ import reducer from '../reducers'
 const App = () => {
 
   const [state, dispatch] = useReducer(reducer, [])
+  const value = {state, dispatch}
   return (
-    <AppContext.Provider value={'Hello, I am a provider.'}>
+    <AppContext.Provider value={value}>
       <div className="container-fluid">
-        <EventForm state={state} dispatch={dispatch}/>
-        <Events state={state} dispatch={dispatch}/>
+        <EventForm/>
+        <Events/>
       </div>
     </AppContext.Provider>
   );
